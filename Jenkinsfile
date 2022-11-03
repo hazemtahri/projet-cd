@@ -13,7 +13,7 @@ pipeline {
     
        stage('Docker Build and Push') {
        steps {
-         withDockerRegistry([credentialsId: "docker", url: ""]) {
+         withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
            sh 'sudo docker build -t amineturki/cd:latest .'
            sh 'docker push amineturki/cd:latest '
          }
