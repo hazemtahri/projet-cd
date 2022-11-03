@@ -19,5 +19,12 @@ pipeline {
          }
        }
      }
+	 
+	 	stage('Ansible playbook ') {
+            steps {
+                sh 'ansible-playbook playbook-test.yml'
+                         }
+        }
+	 
 	}
 	}
