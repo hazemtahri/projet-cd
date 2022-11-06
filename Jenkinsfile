@@ -27,7 +27,7 @@ pipeline {
         }
      	stage('Ansible playbook for building the app') {
             steps {
-                sh 'ansible-playbook Ansible/build.yml -i Ansible/inventory/hosts.yml'
+                sh 'ansible-playbook ansible/build.yml -i ansible/inventory/hosts.yml'
                          }
         }
 	 
