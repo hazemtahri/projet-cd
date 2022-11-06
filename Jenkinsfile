@@ -20,9 +20,14 @@ pipeline {
        }
      }
 	 */
-	 	stage('Ansible playbook ') {
+	 	stage('Ansible playbook for test') {
             steps {
                 sh 'ansible-playbook playbook-test.yml'
+                         }
+        }
+     	stage('Ansible playbook for building the app') {
+            steps {
+                sh 'ansible-playbook Ansible/build.yml -i Ansible/inventory/hosts.yml'
                          }
         }
 	 
