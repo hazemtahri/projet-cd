@@ -25,11 +25,20 @@ pipeline {
                 sh 'ansible-playbook playbook-test.yml'
                          }
         }
-     	stage('Ansible playbook for building the app') {
+     	
+    
+    node {
+
+    env.NODEJS_HOME = "${tool 'NodeJsv12.16.2'}"
+    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+    sh 'npm --version'
+
+stage('Ansible playbook for building the app') {
             steps {
                 sh 'ansible-playbook ansible/build.yml -i ansible/inventory/hosts.yml'
                          }
         }
+}
 	 
 	}
 	}
