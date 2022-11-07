@@ -25,6 +25,7 @@ pipeline {
 	 	stage('Ansible playbook for test') {
             steps {
                sh 'echo $PATH'
+               sh 'ng version'
                 sh 'ansible-playbook playbook-test.yml'
                          }
         }
