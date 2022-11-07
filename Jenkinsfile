@@ -34,6 +34,12 @@ pipeline {
 
 stage('Ansible playbook for building the app') {
             steps {
+                sh 'ansible-playbook ansible/build.yml -i ansible/inventory/hosts.yml'
+                         }
+        }
+    
+    stage('Ansible playbook for building the image and running the container') {
+            steps {
                 sh 'ansible-playbook ansible/docker.yml -i ansible/inventory/hosts.yml'
                          }
         }
