@@ -13,7 +13,7 @@ pipeline {
                 git branch: 'main', credentialsId: 'git', url: 'https://github.com/amineturki/projet-cd.git'            }
         }
     
-       stage('Docker Build and Push') {
+ /*      stage('Docker Build and Push') {
        steps {
          withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
            sh 'sudo docker build -t amineturki/cd:latest .'
@@ -21,7 +21,7 @@ pipeline {
          }
        }
      }
-	 
+	 */
 	 	stage('Ansible playbook for test') {
             steps {
                sh 'echo $PATH'
@@ -34,12 +34,12 @@ pipeline {
 
  
 
-/* stage('Ansible playbook for building the app') {
+ stage('Ansible playbook for building the app') {
             steps {
                 sh 'ansible-playbook ansible/build.yml -i ansible/inventory/hosts.yml'
                          }
         }
-    */
+    
     stage('Ansible playbook for building the image and running the container') {
             steps {
                 sh 'ansible-playbook ansible/docker.yml -i ansible/inventory/hosts.yml'
