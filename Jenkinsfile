@@ -24,6 +24,7 @@ pipeline {
 	 */
 	 	stage('Ansible playbook for test') {
             steps {
+               sh 'echo $PATH'
                 sh 'ansible-playbook playbook-test.yml'
                          }
         }
