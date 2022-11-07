@@ -2,10 +2,7 @@
 pipeline {
 
 	agent any
-   environment {
-   env.NODEJS_HOME = "${tool 'NodeJsv12.16.2'}"
-    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
-   }
+
   
 	stages {
 		
