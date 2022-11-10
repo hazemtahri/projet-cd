@@ -1,8 +1,4 @@
----
-# tasks file for build
-#- name: build app
-#  shell: ng build 
-- name: Install aws-sdk
+- name: Building App
   command: /var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/16.10.0/bin/ng "build"
   environment:
      PATH: "{{ ansible_env.PATH }}:/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/16.10.0/bin"
