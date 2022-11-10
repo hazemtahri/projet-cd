@@ -1,6 +1,6 @@
 - name: Tag image
   become: yes
-  shell: docker tag hazemtahri/angular hazemtahri/angular:latest
+  shell: docker tag angular hazemtahri/angular:latest
   
 - name: Tag and push to docker hub
   become: yes
